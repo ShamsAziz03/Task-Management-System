@@ -1,0 +1,109 @@
+/* Chat Container (Holds Sidebar and Chat) */
+.container-chat {
+  display: flex;
+  height: 100vh; /* Full height */
+  gap: 20px; /* Space between list and chat */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Sidebar (Left) */
+.sidebar-chat {
+  width: 250px; /* Fixed width */
+  background: #333;
+  padding: 20px;
+  color: white;
+  border-right: 2px solid #444;
+}
+.sidebar-chat h2{
+  font-family: 'Times New Roman', Times, serif;
+}
+/* User List */
+#user-list {
+  list-style: none;
+  padding: 0;
+}
+
+#user-list li {
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+
+/* Change background color on hover */
+#user-list li:hover {
+  background-color: #555;
+}
+
+/* Main Content (Chat Box on the Right) */
+.main-content {
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  background: #222;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 700px; /* Set max width of chat box */
+}
+
+/* Chat Header */
+.chat-header {
+  background: #444;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+ 
+}
+.chat-header h2{
+  font-family: 'Times New Roman', Times, serif;
+}
+/* Chat Box */
+.chat-box {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 22px;
+  flex: 1; /* Takes up all space */
+  overflow-y: auto; /* Scroll when needed */
+  padding: 10px;
+  background: #333;
+  border-radius: 5px;
+  color: white;
+  max-height: 60vh; /* Prevents growing too large */
+  
+}
+
+/* Message Input */
+.message-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.message-input input {
+  flex: 1; /* Takes full width */
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.message-input button {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#my-nav{
+  display: flex;
+  flex-direction: row;
+  padding:2%;
+  gap: 20px;
+}

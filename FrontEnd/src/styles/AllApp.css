@@ -1,0 +1,12 @@
+.allApp {
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-template-rows: 50px auto;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+
+

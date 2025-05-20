@@ -1,0 +1,42 @@
+aside {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 0;
+}
+aside nav ul {
+  list-style-type: none;
+  background-color: #3e3d3d;
+  height: 90vh;
+  padding-right: 6%;
+  padding-top: 20px;
+}
+aside nav ul li {
+  background-color: #726c6c;
+  margin-bottom: 15px;
+  border-radius: 5px;
+ 
+}
+aside nav ul li a {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: block;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+  height: 35px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+   justify-content: center;
+   
+}
+aside nav ul li a:hover {
+  background-color: #1d0f55;
+  color: #fff;
+  font: normal bold 17px;
+}
+aside nav ul li a.active {
+  background-color: #272fcc;
+  color: #fff;
+}
