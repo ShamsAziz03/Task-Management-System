@@ -4,9 +4,6 @@ export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [PageNum, setPageNum] = useState(1);
-
-  const [numStu, setNumStu] = useState(20);
-  const [numTasks, setNumTasks] = useState(30);
   const [numFinishedProjects, setNumFinishedProjects] = useState(8);
   const [taskId, setTaskId] = useState(5);
   const [newTask, setNewTask] = useState(0);
@@ -34,11 +31,6 @@ const AppProvider = ({ children }) => {
       value={{
         PageNum,
         setPageNum,
-
-        numStu,
-        setNumStu,
-        numTasks,
-        setNumTasks,
         numFinishedProjects,
         setNumFinishedProjects,
         taskId,
@@ -53,7 +45,7 @@ const AppProvider = ({ children }) => {
         currStuId,
         setCurrStuId,
         logHome,
-        setLogHome
+        setLogHome,
       }}
     >
       {children}
