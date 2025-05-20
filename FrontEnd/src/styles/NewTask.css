@@ -1,0 +1,70 @@
+#newTask {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  color: #fff;
+}
+#newTask #topSection {
+  margin: 5%;
+  padding-right: 3%;
+}
+#newTask #topSection .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+#newTask #topSection .header a {
+  text-decoration: none;
+  background-color: #111111;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 2px;
+  font-size: 18px;
+}
+#newTask #topSection .header h1 {
+  color: #020ef6;
+  font-weight: bold;
+  font-size: 23px;
+}
+#newTask #topSection form section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: left;
+  margin-top: 20px;
+}
+#newTask #topSection form section label {
+  font-weight: bold;
+  float: left;
+  text-align: left;
+}
+#newTask #topSection form section option {
+  color: #fff;
+}
+#newTask #topSection form section select,
+#newTask #topSection form section input {
+  background-color: #242424;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+}
+#newTask #topSection form section textarea {
+  height: 25px;
+  background-color: #242424;
+  color: #fff;
+}
+#newTask #topSection form #submit {
+  color: #fff;
+  background-color: #015a07;
+  font-weight: bold;
+  font-size: 17px;
+}
+#newTask #topSection input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+}

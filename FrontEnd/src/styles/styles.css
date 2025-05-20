@@ -1,0 +1,712 @@
+
+/* Projects Section */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between projects */
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.project {
+  width: calc(33.333333% - 10px); /* Three per row with gaps */
+  min-height: 120px; /* Ensures consistency */
+  background-color: #3E3D3D;
+  padding: 20px; /* Increased padding for more space */
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project .w3-light-grey {
+  height: 20px;
+}
+
+.project p {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.project h2,
+.project h3 {
+  color: #027BFF;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#proj {
+  color: #027BFF;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 55px;
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between; /* Pushes start & end date apart */
+  gap: 10px; /* Adds space between start & end date */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .project {
+    width: calc(50% - 10px); /* Two per row for medium-sized screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    width: 100%; /* One per row for small screens */
+  }
+
+  #proj {
+    font-size: 40px; /* Slightly smaller font for mobile */
+  }
+}
+
+/* For filtered projects to allow horizontal scrolling */
+.filtered-projects {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping if too many projects */
+  gap: 20px; /* Adds space between projects */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+}
+
+
+#search1 {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 50px;
+  width: 500px;
+  transition: border 0.3s ease-in-out;
+  margin-left: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0px;
+}
+
+
+#search1:focus {
+  border-color: #027BFF;
+  outline: none;
+}
+
+
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the navigation links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change color on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Modal */
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+  width: 50%; /* Set width to 50% of the screen */
+  max-width: 500px; /* Maximum width for large screens */
+  max-height: 80%; /* Prevents overflow of the modal */
+  overflow-y: auto; /* Adds scrolling if content is too long */
+  border-radius: 12px; /* Smooth corners */
+  padding: 25px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+/* Show Modal */
+.modal.show {
+  display: block; /* Show the modal */
+  opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif; /* Cleaner font */
+  font-size: 16px;
+  line-height: 1.5; /* Better readability */
+  position: relative;
+  max-height: 80%; /* Keeps modal content from overflowing */
+}
+
+/* Close Button */
+.close-btn {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #f00; /* Red on hover for better indication */
+}
+
+/* Title */
+.modal-title {
+  font-size: 30px;
+  color: #1e90ff; /* Bright blue color */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #444; /* Dark background for inputs */
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Input Placeholder Text */
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+  color: #bbb;
+}
+
+/* Add Project Button */
+.add-project-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-project-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+/* Focused Input Fields */
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  border-color: #1e90ff; /* Blue border on focus for better indication */
+  outline: none; /* Removes the default outline */
+  background-color: #555; /* Slightly lighter background */
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between projects */
+  align-items: stretch;
+}
+
+.project {
+  width: calc(33.333333% - 15px); /* Three per row with gaps */
+  min-height: 100px; /* Ensures consistency */
+  background-color: #3E3D3D;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.filtered-projects {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping if too many projects */
+  gap: 20px; /* Adds space between projects */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+}
+
+.project .w3-light-grey {
+  height: 20px;
+}
+
+
+.project p{
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+ 
+  .project h2, .project h3{
+    color: #027BFF;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+#proj{
+  color: #027BFF;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+}
+.date-container {
+  display: flex;
+  justify-content: space-between; /* Pushes start & end date apart */
+  gap: 10px; /* Adds spacing between them */
+}
+#search1 {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 500px;
+  transition: border 0.3s ease-in-out;
+  margin-left: 0px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#search1:focus {
+  border-color: #027BFF;
+  outline: none;
+}
+
+
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the navigation links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change color on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Modal */
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+  width: 50%; /* Set width to 50% of the screen */
+  max-width: 500px; /* Maximum width for large screens */
+  max-height: 80%; /* Prevents overflow of the modal */
+  overflow-y: auto; /* Adds scrolling if content is too long */
+  border-radius: 12px; /* Smooth corners */
+  padding: 25px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+/* Show Modal */
+.modal.show {
+  display: block; /* Show the modal */
+  opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif; /* Cleaner font */
+  font-size: 16px;
+  line-height: 1.5; /* Better readability */
+  position: relative;
+  max-height: 80%; /* Keeps modal content from overflowing */
+}
+
+/* Close Button */
+.close-btn {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #f00; /* Red on hover for better indication */
+}
+
+/* Title */
+.modal-title {
+  font-size: 30px;
+  color: #1e90ff; /* Bright blue color */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #444; /* Dark background for inputs */
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Input Placeholder Text */
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+  color: #bbb;
+}
+
+/* Add Project Button */
+.add-project-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-project-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+/* Focused Input Fields */
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  border-color: #1e90ff; /* Blue border on focus for better indication */
+  outline: none; /* Removes the default outline */
+  background-color: #555; /* Slightly lighter background */
+}
+
+
+
+
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 20%;
+  min-width: 40px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 70px;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: #027BFF;
+  padding: 16px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+#my-nav{
+  display: flex;
+  flex-direction: row;
+  padding:2%;
+  gap: 20px;
+}
+.projects{
+  padding:3%;
+ 
+}
+progress {
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+}
+
+progress::-webkit-progress-value {
+  background-color: #027BFF; /* Set progress bar to blue */
+}
+
+progress::-moz-progress-bar {
+  background-color: #027BFF; /* Set progress bar to blue */
+}
+
+progress::-ms-progress-bar {
+  background-color: #027BFF /* Set progress bar to blue for IE */
+}
+.task-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  border-right: 2px solid #333;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.task-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.task-sidebar-header h3{
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.task-sidebar button {
+  background: #027BFF;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.task-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.task-card {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+   border: 2px solid #00bfff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+   box-shadow: 0 0 12px #00bfff;
+    background-color: #222;
+  
+}
+
+.task-card h4 {
+  margin: 0 0 8px 0;
+  color: #027BFF;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+.task-card p {
+  margin: 0 0 12px 0;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.task-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: white;
+  gap: 4px;
+}
+.selected-project {
+  border: 2px solid #00bfff;
+  box-shadow: 0 0 12px #00bfff;
+  background-color: #222;
+}
